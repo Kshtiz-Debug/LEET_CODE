@@ -1,0 +1,28 @@
+Given an integer n, return any array containing n unique integers such that they add up to 0.
+
+
+code:
+
+class Solution:
+    def sumZero(self, n: int) -> List[int]:
+        def odd(n):
+            i=n//2
+            neg=(-i)
+            pos=i
+            out=[]
+            for x in range(neg,pos+1):
+                out.append(x)
+            return out
+        def even(n):
+            pos=n
+            neg=(-n)
+            x=[]
+            for i in range(neg,pos+1,2):
+                if i==0:
+                    continue
+                x.append(i)
+            return x
+        if n%2==0:
+            return even(n)
+        else:
+            return odd(n)
