@@ -1,0 +1,62 @@
+Given a 0-indexed string s, permute s to get a new string t such that:
+
+    All consonants remain in their original places. More formally, if there is an index i with 0 <= i < s.length such that s[i] is a consonant, then t[i] = s[i].
+    The vowels must be sorted in the nondecreasing order of their ASCII values. More formally, for pairs of indices i, j with 0 <= i < j < s.length such that s[i] and s[j] are vowels, then t[i] must not have a higher ASCII value than t[j].
+
+Return the resulting string.
+
+The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in lowercase or uppercase. Consonants comprise all letters that are not vowels.
+
+
+
+
+
+code:
+
+
+
+class Solution:
+    def sortVowels(self, s: str) -> str:
+        def conso(s):
+            return s
+        final=""
+        store=[]
+        vowels=['A','E','I','O','U','a','e','i','o','u']
+        for i in s:
+            if i in vowels:
+                store.append(i)
+        store=sorted(store)
+        x=0
+        for i in s:
+            if i not in vowels:
+                final+=i
+            else:
+                final+=store[x]
+                x+=1
+        return final
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+concept:
+
+So we had been given with a string that might or might not have vowels in it . And what was instructed was to keep the consonants at the same place while making the vowels arrange 
+in non-decreasing or ascending order.
+Now the first that came to my mind was to ................. uhmmmmm ........... No it wasn't abt coding 
+It was maths 
+Permutation and Combination concept where we arrange some people based on some given conditions .
+Well this question is giving me that type of vibe ..........
+Sorry .. Let's get back to the question
+
+
+So I brought back my mind from P&C to coding .....
+
+I had this idea that I will need to define a list for the vowels.
+And then for the consonants I need to keep them at the same place .
+So i made a seperate function which to be honest was'nt required but ......uhmmm .... functions are cool ... so yeah I like cool stuffs in my code
+Then I made a list of all the vowels present in the string and sorted them ...... Why???......... Well after giving it a thought I came up with this arrangement ....
+
+Then it is all basics ............. and we all know that much ........... ig <wink>
+
+Thankyou ~ ~ ~ ~
