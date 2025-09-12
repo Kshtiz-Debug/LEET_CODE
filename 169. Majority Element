@@ -1,0 +1,41 @@
+Given an array nums of size n, return the majority element.
+
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+
+
+
+code:
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        d={}
+        for i in nums:
+            if i in d:
+                d[i]+=1
+            else:
+                d[i]=1
+        m=0
+        maj=0
+        for keys in d:
+            if m<d[keys]:
+                m=d[keys]
+                maj=keys
+
+        return maj       
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+approach:
+
+So the whole point is to get ur mind to think in different possible ways so that it can deal with new problems .
+and the concept is pretty simple . 
+I dont think that I need to explain this
+If you are not able to understand the code then study the basics of dictionaries
+
+
+The moment I saw abt frequency of numbers .... Dictionaries were the first thing that came to my mind ..... and i solved 
+
+
