@@ -1,0 +1,30 @@
+You are given an integer array nums and an integer k. You can perform the following operation any number of times:
+
+    Select an index i and replace nums[i] with nums[i] - 1.
+
+Return the minimum number of operations required to make the sum of the array divisible by k.
+
+
+output:
+
+class Solution:
+    def minOperations(self, nums: List[int], k: int) -> int:
+        o=0
+        sum=0
+        for i in nums:
+            sum+=i
+        while True:
+            if sum%k==0:
+                return o
+            else:
+                sum-=1
+                o+=1
+
+
+
+
+Approach:
+
+So isntead of going and choosing a partiular index ,i just started subtracting from the sum and kept incrementing a tracker variable to keep a track of the amt that we are subtracting from our sum.
+
+
