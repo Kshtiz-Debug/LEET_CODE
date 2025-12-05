@@ -1,0 +1,35 @@
+You are given an integer array nums of length n.
+
+A partition is defined as an index i where 0 <= i < n - 1, splitting the array into two non-empty subarrays such that:
+
+    Left subarray contains indices [0, i].
+    Right subarray contains indices [i + 1, n - 1].
+
+Return the number of partitions where the difference between the sum of the left and right subarrays is even.
+
+
+
+code:
+
+
+class Solution:
+    def countPartitions(self, nums: List[int]) -> int:
+        count=0
+        for i in range(len(nums)-1):
+            suma=0
+            sumb=0
+            a=nums[:i]
+            b=nums[i:]
+            for j in a:
+                suma+=j
+            for j in b:
+                sumb+=j
+            if (suma-sumb)%2==0:
+                count+=1
+        return count
+
+
+
+
+Approach:
+So the question was to check for the number of subarrays that will result in a even difference of sum .
