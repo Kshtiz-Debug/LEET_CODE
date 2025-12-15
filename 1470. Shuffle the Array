@@ -1,0 +1,19 @@
+Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+
+Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+
+
+code:
+
+
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        l=[]
+        n=len(nums)
+        c=n//2
+        for i in range(n//2):
+            l.append(nums[i])
+            l.append(nums[i+c])
+
+        return l
+
