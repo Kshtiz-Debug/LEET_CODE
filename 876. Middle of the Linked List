@@ -1,0 +1,40 @@
+Given the head of a singly linked list, return the middle node of the linked list.
+
+If there are two middle nodes, return the second middle node.
+
+
+code:
+
+
+
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+struct ListNode* middleNode(struct ListNode* head) {
+    int x=0;
+    struct ListNode* curr = head;
+    while(curr!=NULL){
+        x++;
+        curr=curr->next;
+    }
+    int y=0;
+    struct ListNode* temp=NULL;
+    while(head!=NULL){
+        y++;
+        if(y==(x/2)+1){
+            temp=head;
+        }
+        head=head->next;
+    }
+    return temp;
+}
+
+
+
+
+this code is in c language 
