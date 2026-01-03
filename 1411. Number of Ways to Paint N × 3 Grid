@@ -12,3 +12,7 @@ class Solution:
             A,B=(2*A+2*B),(2*A+3*B)
         return (A+B)%(10**9+7)
 
+
+
+The " _ " used in the for loop is to show that no variable is there 
+Just do the operation for the specified number of times and 
