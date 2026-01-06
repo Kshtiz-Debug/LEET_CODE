@@ -1,0 +1,54 @@
+Given the root of a binary tree, the level of its root is 1, the level of its children is 2, and so on.
+
+Return the smallest level x such that the sum of all the values of nodes at level x is maximal.
+
+
+code:
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+int maxLevelSum(struct TreeNode* root) {
+    struct TreeNode* temp=root;
+    int sum=temp->val;
+    int ans=1;
+    int actual=1;
+    struct TreeNode* queue[10000];
+    int front=0;int rear=0;
+    queue[rear++]=temp;
+    while(front<rear){
+        int curr=0;
+        int level=rear-front;
+        for(int i=0;i<level;i++){
+            temp=queue[front++];
+            curr+=temp->val;
+            if(temp->left){
+                queue[rear++]=temp->left;
+            }
+            if(temp->right){
+                queue[rear++]=temp->right;
+            }
+        }
+        if(sum<curr){
+            sum=curr;
+            ans=actual;
+        }
+        actual++;
+    }
+    return ans;
+}
+
+
+
+This code is in c language .
+
+Concepts required to solve this problem are INORDER Traversal of nodes (BSF) .
+Understand the topic and try this problem on your own
+Thankyou~
+
