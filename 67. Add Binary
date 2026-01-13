@@ -1,0 +1,41 @@
+Given two binary strings a and b, return their sum as a binary string.
+
+
+
+code:
+
+
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        out=""
+        carry="0"
+        if len(a)>len(b):
+            b="0"*(len(a)-len(b))+b
+        else:
+            a="0"*(len(b)-len(a))+a
+        for i in range(len(a)):
+            if a[len(a)-i-1]=="1" and b[len(a)-i-1]=="1":
+                if carry=="0":
+                    out="0"+out
+                    carry="1"
+                else:
+                    out="1"+out
+                    carry="1"
+            elif a[len(a)-i-1]=="0" and b[len(a)-i-1]=="0":
+                if carry=="0":
+                    out="0"+out
+                    carry="0"
+                else:
+                    out="1"+out
+                    carry="0"
+            else:
+                if carry=="0":
+                    out="1"+out
+                    carry="0"
+                else:
+                    out="0"+out
+                    carry="1"
+        if carry=="1":
+            out="1"+out
+        return out
+
