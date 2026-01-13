@@ -1,0 +1,44 @@
+You are given a 2D integer array squares. Each squares[i] = [xi, yi, li] represents the coordinates of the bottom-left point and the side length of a square parallel to the x-axis.
+
+Find the minimum y-coordinate value of a horizontal line such that the total area of the squares above the line equals the total area of the squares below the line.
+
+Answers within 10-5 of the actual answer will be accepted.
+
+Note: Squares may overlap. Overlapping areas should be counted multiple times.
+
+
+
+code:
+
+
+class Solution:
+    def separateSquares(self, squares: List[List[int]]) -> float:
+        area=0
+        low=float("inf")
+        high=float("-inf")
+        for i in squares:
+            area=area+(i[2]**2)
+            low=min(low,i[1])
+            high=max(high,i[1]+i[2])
+        target=area/2
+        
+        def ar(a):
+            s=0.0
+            for i,j,k in squares:
+                if a<=j:
+                    continue
+                elif a>j+k:
+                    s=s+k*k
+                else:
+                    s=s+k*(a-j)
+            return s
+        
+        for _ in range(60):
+            mid=(high+low)/2
+            if ar(mid)<target:
+                low=mid
+            else:
+                high=mid
+        return low
+
+
