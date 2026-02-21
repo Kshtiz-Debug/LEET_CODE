@@ -22,6 +22,33 @@ struct ListNode* middleNode(struct ListNode* head) {
         else if(fast->next==NULL){
             return slow;
         }
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------or--------------------------------------------------------------------------------------------
+
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+struct ListNode* middleNode(struct ListNode* head) {
+    struct ListNode* temp=head;
+    struct ListNode* slow=head;
+    struct ListNode* fast=head;
+    while(fast!=NULL && fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+       
+    }
+    return slow;
+}
         slow=slow->next;
         fast=fast->next->next;
        
