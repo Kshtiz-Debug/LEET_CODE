@@ -1,0 +1,40 @@
+// Given the head of a singly linked list, return true if it is a or false otherwise.
+
+
+// code:
+
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+bool isPalindrome(struct ListNode* head) {
+    struct ListNode* temp=head;
+    int stack[100000];
+    int top=-1;
+    while(temp){
+        stack[++top]=temp->val;
+        temp=temp->next;
+    }
+    struct ListNode* t=head;
+    while(t){
+        if (t->val!=stack[top--])
+        return false;
+        t=t->next;
+    }
+    return true;
+}
+
+
+
+
+/*
+
+So whenever there is a question to reverse just use stacks to solve it 
+Most efficient according to me and helps in solve most of the questions without too much effort 
+STACKS.....
+
+*/
