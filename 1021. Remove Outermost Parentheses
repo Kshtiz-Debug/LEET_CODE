@@ -49,3 +49,56 @@ class Solution:
 
 
 Took help from AI.....
+
+
+
+
+
+----------------------------------------------------------------------
+
+
+
+class Solution {
+    public String removeOuterParentheses(String s) {
+        int x= s.length();
+        int y=0;
+        List<Integer> a = new ArrayList<>();
+
+        for(int i=0;i<x;i++){
+            if(y==0){
+                a.add(i);
+            }
+            if(s.charAt(i)=='('){
+                y=y+1;
+            }
+            else if(s.charAt(i)==')'){
+                y=y-1;
+            }
+            if(y==0){
+                a.add(i);
+            }
+        }
+        int z=0;
+        String sr="";
+        for(int i=0;i<x;i++){
+            if(i==a.get(z)){
+                z++;
+                continue;
+            }
+            else{
+                sr=sr+s.charAt(i);
+            }
+        }
+        return sr;
+    }
+}
+
+
+
+
+
+
+this was done by myself 
+in java language 
+
+
