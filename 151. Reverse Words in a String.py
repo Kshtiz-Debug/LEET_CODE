@@ -36,7 +36,7 @@ class Solution:
 from this i learnt wht is the difference between split n strip ...  
 
 
-so split is used to split the character into multiple substrings 
+so split is used to split the character into multiple substrings .... its like it breaks the string in multiple parts .... with that it also stores all the splitted part of the string inside a list 
 while strip removes any trailing whitespace characters from the string 
 
 
