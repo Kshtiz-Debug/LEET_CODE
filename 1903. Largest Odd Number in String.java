@@ -46,6 +46,16 @@ class Solution {
 
 
 
+/*
+
+
+So wht is happening is 
+
+We r tryna find the first odd digit from right n then storing its position ..... once tht is done then removing any leading zeroes so we get the 
+biggest odd number 
+
+
+*/
 
 
 
