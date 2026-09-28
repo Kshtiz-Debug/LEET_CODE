@@ -48,6 +48,6 @@ class Solution:
 
 
 This is like the brute force way to solve this type of question by simply counting the number of each n changing its value 
-
+But this can be optimized a lot more than this 
 
 """
