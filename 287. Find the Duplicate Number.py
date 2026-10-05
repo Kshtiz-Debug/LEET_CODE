@@ -31,4 +31,53 @@ So lets try to optimize it
 
 
 
+
+now lets think how to change that o(n^2) to something less than that
+
+Well we know tht there are exactly n+1 elements in the array
+and they are ordered from 1 to n with one repeated value 
+
+
+so why dont we use dictionary to get that extra count of 2 
+
+
 """
+
+
+
+
+class Solution:
+    def findDuplicate(self, nums: list[int]) -> int:
+        l={}
+        for i in nums:
+            if i not in l:
+                l[i]=1
+            else:
+                return i
+
+
+
+"""
+
+
+This solution is accepted which is of time complexity of o(n)
+but it uses extra space 
+
+
+Current: Hash Table
+Suggested: Two Pointers
+/
+Floyd's Cycle Finding Algorithm
+Key Idea:
+Find duplicate in array with constant space using cycle detection or binary search.
+Consider:
+Can you spot the hidden cycle in the array indices and use two pointers to find the entrance?
+
+
+
+Hence we can optimize it more by optimizing the space complexity part 
+"""
+
+
+
+
