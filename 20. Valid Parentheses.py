@@ -1,3 +1,6 @@
+"""
+
+
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
 An input string is valid if:
@@ -10,6 +13,9 @@ An input string is valid if:
 
 code:
 
+
+
+"""
 
 class Solution:
     def isValid(self, s: str) -> bool:
@@ -30,3 +36,35 @@ class Solution:
         return False
 
             
+
+
+
+"""
+
+
+So one more soln like this is 
+
+
+
+"""
+
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        top=-1
+        a=['']*len(s)
+        
+        for i in s:
+            if i in ['{','(','['] :
+                top=top+1
+                a[top]=i
+            else:
+                if (i=='}' and a[top]=='{') or (i==')' and a[top]=='(') or (i==']' and a[top]=='['):
+                    top-=1
+                else:
+                    return False
+
+        if top==-1:
+            return True
+        else:
+            return False
