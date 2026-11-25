@@ -39,6 +39,16 @@ class Solution:
 
 
 
+"""
+
+
+This is considered as the optimal solution 
+Time complexity of it is O(n2) 
+The concept used is hashmapping
+
+
+"""
+
 
 
 
